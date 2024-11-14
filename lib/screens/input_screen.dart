@@ -30,7 +30,7 @@ class _InputScreenState extends State<InputScreen> {
       }
     } else {
       _showNoConnectionAlert();
-      _temperature = 17.0; // Valor predeterminado sin conexión
+      _temperature = 17.0;
     }
     setState(() {});
   }
@@ -113,56 +113,70 @@ class _InputScreenState extends State<InputScreen> {
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextField(
-              controller: _latController,
-              decoration: InputDecoration(
-                labelText: 'Latitud',
-                hintText: 'Ejemplo: 6.2447',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.location_on),
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 16),
-            TextField(
-              controller: _lonController,
-              decoration: InputDecoration(
-                labelText: 'Longitud',
-                hintText: 'Ejemplo: -75.5748',
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.location_on),
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(height: 24),
-            OutlinedButton(
-              onPressed: _fetchTemperature,
-              child: Text(
-                'Consultar',
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Created by Yeiverson Yurgaky',
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.blueAccent,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.blueAccent,
-                padding: EdgeInsets.symmetric(vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+              SizedBox(height: 30),
+              TextField(
+                controller: _latController,
+                decoration: InputDecoration(
+                  labelText: 'Latitud',
+                  hintText: 'Ejemplo: 6.2447',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.location_on),
                 ),
-                side: BorderSide.none,
+                keyboardType: TextInputType.number,
               ),
-            ),
-            SizedBox(height: 24),
-            TemperatureDisplay(temperature: _temperature),
-          ],
+              SizedBox(height: 16),
+              TextField(
+                controller: _lonController,
+                decoration: InputDecoration(
+                  labelText: 'Longitud',
+                  hintText: 'Ejemplo: -75.5748',
+                  border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.location_on),
+                ),
+                keyboardType: TextInputType.number,
+              ),
+              SizedBox(height: 24),
+              OutlinedButton(
+                onPressed: _fetchTemperature,
+                child: Text(
+                  'Consultar',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blueAccent,
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  side: BorderSide.none,
+                ),
+              ),
+              SizedBox(height: 60),
+              TemperatureDisplay(temperature: _temperature),
+            ],
+          ),
         ),
       ),
     );

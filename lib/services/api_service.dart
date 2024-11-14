@@ -13,10 +13,9 @@ class ApiService {
         final data = json.decode(response.body);
         return data['current_weather']['temperature'];
       } else {
-        return null; // Retorna null si la respuesta no es exitosa
+        return null;
       }
     } catch (e) {
-      // Manejo de cualquier error de red
       print('Error fetching temperature: $e');
       return null;
     }

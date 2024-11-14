@@ -7,7 +7,6 @@ class TemperatureDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Define el color de la tarjeta según la temperatura
     Color cardColor;
     if (temperature != null && temperature! > 25) {
       cardColor = Colors.red;
@@ -35,8 +34,7 @@ class TemperatureDisplay extends StatelessWidget {
                 ),
               ),
             ),
-            
           )
-        : SizedBox.shrink(); // Oculta el widget si no hay temperatura
+        : SizedBox.shrink();
   }
 }

@@ -9,13 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Consulta de Temperatura',
       theme: ThemeData(
-        primarySwatch: Colors.blue, // Define el color principal para la app
+        primarySwatch: Colors.blue,
         scaffoldBackgroundColor:
-            Colors.blue.shade50, // Fondo azul claro para la app
+            Colors.blue.shade50,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blueAccent, // Color del AppBar
+          backgroundColor: Colors.blueAccent,
           titleTextStyle: TextStyle(
             color: Colors.white,
             fontSize: 20,
